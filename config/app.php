@@ -146,10 +146,10 @@ return [
         /*
          * Application Service Providers...
          */
-        Excel\Providers\AppServiceProvider::class,
-        Excel\Providers\EventServiceProvider::class,
-        Excel\Providers\RouteServiceProvider::class,
-        Excel\Providers\RepositoryServiceProvider::class
+        TocaLeao\Providers\AppServiceProvider::class,
+        TocaLeao\Providers\EventServiceProvider::class,
+        TocaLeao\Providers\RouteServiceProvider::class,
+        TocaLeao\Providers\RepositoryServiceProvider::class
 
     ],
 

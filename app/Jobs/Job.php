@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Jobs;
+namespace TocaLeao\Jobs;
 
 use Illuminate\Bus\Queueable;
 

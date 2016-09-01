@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Providers;
+namespace TocaLeao\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,0 +1,65 @@
+/* 
+
+---------- Sumario --------- //
+-------- 1-  border
+-------- 2-  BG
+-------- 3-  text-color
+--------- Fim Sumario ------ //
+*/
+
+
+
+/* ----------- 1. border --------------
+--------------------------------------*/
+.border-box-full{
+    border: 1px solid #3c763d;
+}
+
+.border-box-warning{
+    border: 1px solid #8a6d3b;
+}
+
+.border-box-danger{
+    border: 1px solid #a94442;
+}
+
+.border-finalizar-venda{
+    border: 1px solid #204d74;
+}
+
+
+.border-table-compra{
+    border: 1px solid #ddd;
+}
+
+
+/* ----------- 2. bg --------------
+--------------------------------------*/
+.bg-box-full{
+    background-color: #dff0d8;
+}
+
+.bg-box-warning{
+    background-color: #fcf8e3;
+}
+
+.bg-box-danger{
+    background-color: #f2dede;
+}
+
+.bg-finalizar-venda{
+    background-color: #d9edf7;
+}
+
+.bg-table-produtos{
+    background-color: #fdfdfd; 
+}
+
+
+/* ----------- 3. text-color --------------
+--------------------------------------*/
+
+
+.text-color-1{
+    color: white;
+}

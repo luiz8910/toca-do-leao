@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Http;
+namespace TocaLeao\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \Excel\Http\Middleware\EncryptCookies::class,
+        \TocaLeao\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \Excel\Http\Middleware\VerifyCsrfToken::class,
+        \TocaLeao\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Excel\Http\Middleware\Authenticate::class,
+        'auth' => \TocaLeao\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Excel\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \TocaLeao\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

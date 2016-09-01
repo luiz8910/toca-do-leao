@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Exceptions;
+namespace TocaLeao\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Excel\Repositories;
+namespace TocaLeao\Repositories;
 
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
  * Interface UserRepository
- * @package namespace Excel\Repositories;
+ * @package namespace TocaLeao\Repositories;
  */
 interface UserRepository extends RepositoryInterface
 {

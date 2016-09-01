@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Excel\User::class,
+        'model'  => TocaLeao\User::class,
         'key' => '',
         'secret' => '',
     ],

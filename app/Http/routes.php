@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CustomerController@payBox');
+
+Route::post('customer/show/{code}', 'CustomerController@show');

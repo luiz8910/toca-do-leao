@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Http\Middleware;
+namespace TocaLeao\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

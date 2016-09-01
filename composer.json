@@ -23,7 +23,7 @@
             "database"
         ],
         "psr-4": {
-            "Excel\\": "app/"
+            "TocaLeao\\": "app/"
         }
     },
     "autoload-dev": {

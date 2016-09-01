@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Http\Requests;
+namespace TocaLeao\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Events;
+namespace TocaLeao\Events;
 
 abstract class Event
 {

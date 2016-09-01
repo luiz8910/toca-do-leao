@@ -1,6 +1,6 @@
 <?php
 
-namespace Excel\Http\Middleware;
+namespace TocaLeao\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

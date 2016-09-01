@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - tocaLeao@localhost" uuid="e59b3ec8-0ebe-4b36-b229-b8c6c9ca9fcd">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>tocaLeao.*</schema-pattern>
+      <default-schemas>tocaLeao.*</default-schemas>
+    </data-source>
+  </component>
+</project>

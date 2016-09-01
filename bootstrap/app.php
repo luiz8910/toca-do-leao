@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    Excel\Http\Kernel::class
+    TocaLeao\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    Excel\Console\Kernel::class
+    TocaLeao\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Excel\Exceptions\Handler::class
+    TocaLeao\Exceptions\Handler::class
 );
 
 /*

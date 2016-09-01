@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: Excel
-        psr4_prefix: Excel
+        namespace: TocaLeao
+        psr4_prefix: TocaLeao
         src_path: app

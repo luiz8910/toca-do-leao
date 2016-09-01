@@ -1,16 +1,16 @@
 <?php
 
-namespace Excel\Repositories;
+namespace TocaLeao\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Excel\Repositories\UserRepository;
-use Excel\Models\User;
-use Excel\Validators\UserValidator;
+use TocaLeao\Repositories\UserRepository;
+use TocaLeao\Models\User;
+use TocaLeao\Validators\UserValidator;
 
 /**
  * Class UserRepositoryEloquent
- * @package namespace Excel\Repositories;
+ * @package namespace TocaLeao\Repositories;
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {

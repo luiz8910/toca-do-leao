@@ -1,10 +1,10 @@
 <?php
 
-namespace Excel\Http\Controllers\Auth;
+namespace TocaLeao\Http\Controllers\Auth;
 
-use Excel\Models\User;
+use TocaLeao\Models\User;
 use Validator;
-use Excel\Http\Controllers\Controller;
+use TocaLeao\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
