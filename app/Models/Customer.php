@@ -11,7 +11,7 @@ class Customer extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-        'name', 'cpf', 'rg', 'dateBirth', 'barCode', 'planB'
+        'name', 'cpf', 'rg', 'dateBirth', 'barCode', 'planB', 'currentBalance'
     ];
 
     public function products()

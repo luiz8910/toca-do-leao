@@ -14,3 +14,7 @@
 Route::get('/', 'CustomerController@payBox');
 
 Route::post('customer/show/{code}', 'CustomerController@show');
+
+Route::post('customer/addCredit/{id}-{money}', 'CustomerController@addCredit');
+
+Route::get('cliente', 'CustomerController@index');

@@ -26,6 +26,16 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        return view('demo.customer');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function payBox()
     {
         $customer = $this->repository->all();
@@ -33,25 +43,17 @@ class CustomerController extends Controller
         return view('demo.payBox', compact('customer'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function addCredit($id, $money)
     {
-        //
-    }
+        $balance = $this->repository->find($id)->currentBalance;
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $money += $balance;
+
+        $update = DB::table('customers')
+            ->where('id', $id)
+            ->update(['currentBalance' => $money]);
+
+        return $money;
     }
 
     /**
@@ -62,7 +64,16 @@ class CustomerController extends Controller
      */
     public function show($code)
     {
-        $result = DB::table('customers')->where('barCode', $code)->get();
+        $result = DB::table('customers')
+            ->where('barCode', $code)
+            ->first();
+
+        if($result == null)
+        {
+            $result = DB::table('customers')
+                ->where('planB', $code)
+                ->first();
+        }
 
         echo json_encode($result);
     }

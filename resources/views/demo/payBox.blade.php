@@ -69,18 +69,30 @@
 
             <div class="row">
                 <div class="col-md-12 col-sm-12">
+
+
                     <p class="lead text-capitalize text-left" id="name">
-                            <br>
+
                     </p>
 
-                    <p class="lead text-capitalize text-left">
-                        <strong>Rg:</strong> 22.748.588.22-x     <br>
+                    <p class="lead text-capitalize text-left" id="cpf">
+
                     </p>
 
-                    <p class="lead text-capitalize text-left">
-                        <strong>Idade:</strong> 22     <br>
-                    </p>
                 </div> <!-- FIM DIV.COL-MD-10.COL-SM-8 -->
+
+                <!-- Usar esse block quando o cliente estiver com saldo suficiente -->
+                <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full" hidden id="block">
+                    <div class="box">
+                        <p class="lead text-capitalize font-size-1">
+                            <strong>R$:</strong>
+                        </p>
+                        <p class="lead text-capitalize font-size-2" id="balance">
+
+                        </p>
+                    </div> <!-- FIM DIV.BOX -->
+                </div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
+
             </div> <!-- FIM DIV .ROW -->
 
             <div class="spacer-color-1"></div><!-- fim div spacer-default -->
@@ -90,25 +102,47 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-sm-10">
-                    <div class="form-group form-group-lg">
-                        <label class="control-label">Adicionar Crédito</label>
-                        <div class="input-group">
-                            <span class="input-group-addon">R$</span>
-                            <input type="number" class="form-control" id="" aria-describedby="inputGroupSuccess1Status">
+                <form id="addCredit" method="get">
+                    <div class="col-md-10 col-sm-10">
+                        <div class="form-group form-group-lg">
+                            <input type="hidden" id="id">
+                                <label class="control-label">Adicionar Crédito</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">R$</span>
+                                    <input type="number" class="form-control" id="money" aria-describedby="inputGroupSuccess1Status">
+                                </div>
+
+
                         </div>
+                    </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+
+                    <div class="col-xs-2 col-sm-2 form-group-lg bt-ok-compra">
+                        <button type="submit" class="btn btn-labeled btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                                    <span class="btn-label">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                            Adicionar
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Atenção</h4>
+                                    </div>
+                                    <div class="modal-body" id="modalText">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        {{--<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>--}}
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Modal -->
                     </div>
-                </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
-
-                <div class="col-xs-2 col-sm-2 form-group-lg bt-ok-compra">
-                    <button type="button" class="btn btn-labeled btn-success btn-lg">
-                                <span class="btn-label">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                </span>
-                        Adicionar
-                    </button>
-                </div>
-
+                </form>
             </div> <!-- FIM DIV .ROW -->
         </div> <!-- FIM DIV .CONTAINER-FLUID -->
     </section>
@@ -118,12 +152,12 @@
 
 </main>
 
-<foooter>
+<footer>
 
 
 
 
-</foooter>
+</footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

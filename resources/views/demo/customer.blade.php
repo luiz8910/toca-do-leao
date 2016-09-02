@@ -56,7 +56,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <label class="control-label" for="">Código do Cliente</label>
                     <div class="input-group form-group-lg">
-                        <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                        <input type="text" class="form-control"  aria-describedby="basic-addon2" id="code">
                                 <span class="input-group-addon" id="basic-addon2">
                                     <i class="glyphicon glyphicon-barcode"></i>
                                 </span>
@@ -69,22 +69,24 @@
 
             <div class="row">
                 <div class="col-md-9 col-sm-8 col-xs-12">
-                    <p class="lead text-capitalize text-left">
-                        <strong>Nome:</strong> Ana Maria Parça   <br>
-                        <strong>Rg:</strong> 22.748.588.22-x     <br>
-                        <strong>Idade:</strong> 22     <br>
+                    <p class="lead text-capitalize text-left" id="name">
+
+                    </p>
+
+                    <p class="lead text-capitalize text-left" id="cpf">
+
                     </p>
                 </div> <!-- FIM DIV.COL-MD-10.COL-SM-8 -->
 
 
                 <!-- Usar esse block quando o cliente estiver com saldo suficiente -->
-                <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full">
+                <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full" id="block">
                     <div class="box">
                         <p class="lead text-capitalize font-size-1">
                             <strong>R$:</strong>
                         </p>
-                        <p class="lead text-capitalize font-size-2">
-                            <strong>100,00</strong>
+                        <p class="lead text-capitalize font-size-2" id="balance">
+
                         </p>
                     </div> <!-- FIM DIV.BOX -->
                 </div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
@@ -130,29 +132,38 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-12 col-xs-12">
-                    <label class="control-label" for="formGroupInputLarge">Código do Produto</label>
-                    <div class="input-group form-group-lg">
-                        <input type="text" class="form-control"  aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2">
-                                    <i class="glyphicon glyphicon-barcode"></i>
-                                </span>
+                <form id="sell">
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <label class="control-label" for="formGroupInputLarge">Código do Produto</label>
+                        <div class="input-group form-group-lg">
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2" id="productCode">
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <i class="glyphicon glyphicon-barcode"></i>
+                                    </span>
+                        </div>
+                    </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <label class="control-label" for="formGroupInputLarge">Nome do Produto</label>
+                        <div class="input-group form-group-lg">
+                            <input type="text" class="form-control" aria-describedby="basic-addon2" id="nameProduct">
+                        </div>
+                    </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+
+                    <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg">
+                        <label class="control-label" for="formGroupInputLarge">QTD.</label>
+                        <input type="number" class="form-control" id="qtde">
                     </div>
-                </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
-                <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg">
-                    <label class="control-label" for="formGroupInputLarge">QTD.</label>
-                    <input type="number" class="form-control">
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
-                    <button type="button" class="btn btn-labeled btn-success btn-lg">
-                                <span class="btn-label">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                </span>
-                        Adicionar
-                    </button>
-                </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
+                        <button type="button" class="btn btn-labeled btn-success btn-lg">
+                                    <span class="btn-label">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                    </span>
+                            Adicionar
+                        </button>
+                    </div>
+                </form>
             </div> <!-- FIM DIV .ROW -->
 
             <div class="spacer-default"></div><!-- fim div spacer-default -->
@@ -162,7 +173,6 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                         <tr class="active">
-                            <th>Cod.</th>
                             <th>Produto</th>
                             <th>Valor</th>
                             <th>QTD.</th>
@@ -172,31 +182,31 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">002</th>
+
                             <td>skoll lata</td>
                             <td>10,00</td>
                             <td>2</td>
                             <td>20,00</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
-                                                <span class="btn-label">
-                                                    <i class="glyphicon glyphicon-remove"></i>
-                                                </span>
+                                    <span class="btn-label">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                    </span>
                                 </button>
 
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">002</th>
+
                             <td>skoll lata</td>
                             <td>10,00</td>
                             <td>2</td>
                             <td>20,00</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
-                                                <span class="btn-label">
-                                                    <i class="glyphicon glyphicon-remove"></i>
-                                                </span>
+                                    <span class="btn-label">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                    </span>
                                 </button>
 
                             </td>
@@ -232,7 +242,7 @@
                 <div class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-12 text-center box-finalizar-venda border-finalizar-venda bg-finalizar-venda ">
                     <div class="box">
                         <p class="lead text-capitalize font-size-1">
-                            <strong>R$s:</strong>
+                            <strong>R$:</strong>
                         </p>
                         <p class="lead text-capitalize font-size-2">
                             <strong>70,00</strong>
@@ -245,18 +255,20 @@
     </section>
 </main>
 
-<foooter>
+<footer>
 
 
 
 
-</foooter>
+</footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jasny-bootstrap.js"></script>
+<script src="assets/js/payBox.js"></script>
+<script src="assets/js/sales.js"></script>
 
 
 </body>

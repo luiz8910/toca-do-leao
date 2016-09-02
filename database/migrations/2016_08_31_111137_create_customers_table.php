@@ -21,7 +21,6 @@ class CreateCustomersTable extends Migration
 			$table->date('dateBirth');
 			$table->string('barCode');
 			$table->string('planB');
-			$table->decimal('initialBalance');
 			$table->decimal('currentBalance');
             $table->timestamps();
 		});
