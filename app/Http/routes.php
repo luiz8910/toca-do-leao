@@ -20,3 +20,5 @@ Route::post('customer/addCredit/{id}-{money}', 'CustomerController@addCredit');
 Route::get('cliente', 'ProductController@index');
 
 Route::post('product/show/{code}', 'ProductController@show');
+
+Route::post('customer/sell/{id}-{total}', 'CustomerController@sell');

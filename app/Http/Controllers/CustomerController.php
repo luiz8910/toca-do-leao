@@ -74,37 +74,16 @@ class CustomerController extends Controller
         echo json_encode($result);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function sell($id, $total)
     {
-        //
-    }
+        $currentBalance = $this->repository->find($id)->currentBalance;
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        $value = $currentBalance - $total;
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        DB::table('customers')
+            ->where('id', $id)
+            ->update(['currentBalance' => $value]);
+
+        return json_encode(true);
     }
 }

@@ -50,8 +50,7 @@
 
 
 <main>
-    <form action="" method="get" id="sell">
-        <section>
+    <section>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -81,7 +80,7 @@
 
 
                     <!-- Usar esse block quando o cliente estiver com saldo suficiente -->
-                    <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full" id="block">
+                    <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full" hidden id="block">
                         <div class="box">
                             <p class="lead text-capitalize font-size-1">
                                 <strong>R$:</strong>
@@ -134,7 +133,9 @@
             <div class="container">
                 <div class="row">
                         <div class="col-md-8 col-sm-12 col-xs-12">
+                            <input id="id" hidden>
                             <input id="productId" hidden>
+                            <input id="productValue" hidden>
                             <label class="control-label" for="formGroupInputLarge">Código do Produto</label>
                             <div class="input-group form-group-lg">
                                 <input type="text" class="form-control"  aria-describedby="basic-addon2" id="productCode">
@@ -157,7 +158,7 @@
                         </div>
 
                         <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
-                            <button type="button" class="btn btn-labeled btn-success btn-lg">
+                            <button type="button" class="btn btn-labeled btn-success btn-lg" id="addProduct">
                                         <span class="btn-label">
                                             <i class="glyphicon glyphicon-ok"></i>
                                         </span>
@@ -170,54 +171,42 @@
 
                 <div class="border-table-compra ">
                     <div class="table-responsive ajust-table-produtos bg-table-produtos">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover" id="table">
                             <thead>
-                            <tr class="active">
-                                <th>Produto</th>
-                                <th>Valor</th>
-                                <th>QTD.</th>
-                                <th>Total</th>
-                                <th>Ação</th>
-                            </tr>
+                                <tr class="active">
+                                    <th>Produto</th>
+                                    <th>Valor</th>
+                                    <th>QTD.</th>
+                                    <th>Total</th>
+                                    <th>Ação</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-
-                                <td>skoll lata</td>
-                                <td>10,00</td>
-                                <td>2</td>
-                                <td>20,00</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
-                                        <span class="btn-label">
-                                            <i class="glyphicon glyphicon-remove"></i>
-                                        </span>
-                                    </button>
-
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td>skoll lata</td>
-                                <td>10,00</td>
-                                <td>2</td>
-                                <td>20,00</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
-                                        <span class="btn-label">
-                                            <i class="glyphicon glyphicon-remove"></i>
-                                        </span>
-                                    </button>
-
-                                </td>
-                            </tr>
-
-
 
                             </tbody>
                         </table>
                     </div> <!-- FIM DIV .table-responsive.ajust-table-produtos -->
                 </div> <!-- fim div border-table-compra -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Atenção</h4>
+                            </div>
+                            <div class="modal-body" id="modalText">
+                                Deseja Excluir o item selecionado?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <button type="button" id="removeItem" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Modal -->
+
             </div> <!-- FIM DIV .CONTAINER-FLUID -->
         </section>
 
@@ -226,34 +215,39 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group-lg">
-                            <button type="submit" class="btn btn-labeled btn-success btn-lg">
-                                        <span class="btn-label">
-                                            <i class="fa fa-cart-arrow-down fa-lg" aria-hidden="true"></i>
-                                        </span>
-                                Fechar Compra
-                            </button>
-                        </div>
-                        <div class="spacer-default"></div><!-- fim div spacer-default -->
-                    </div> <!-- FIM DIV.COL-MD-9.COL-SM-8 -->
+                    <form id="sell" method="get">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group-lg">
+                                <button type="submit" class="btn btn-labeled btn-success btn-lg">
+                                            <span class="btn-label">
+                                                <i class="fa fa-cart-arrow-down fa-lg" aria-hidden="true"></i>
+                                            </span>
+                                    Fechar Compra
+                                </button>
+                            </div>
+                            <div class="spacer-default"></div><!-- fim div spacer-default -->
+                        </div> <!-- FIM DIV.COL-MD-9.COL-SM-8 -->
 
 
-                    <div class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-12 text-center box-finalizar-venda border-finalizar-venda bg-finalizar-venda ">
-                        <div class="box">
-                            <p class="lead text-capitalize font-size-1">
-                                <strong>Total:</strong>
-                            </p>
-                            <p class="lead text-capitalize font-size-2" id="total">
-
-                            </p>
-                        </div> <!-- FIM DIV.BOX -->
-                    </div> <!-- FIM DIV.COL-MD-3.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
+                        <div class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-12 text-center box-finalizar-venda border-finalizar-venda bg-finalizar-venda ">
+                            <div class="box">
+                                <p class="lead text-capitalize font-size-1">
+                                    <strong>Total:</strong>
+                                </p>
+                                <p class="lead text-capitalize font-size-2">
+                                    R$
+                                </p>
+                                <p class="lead text-capitalize font-size-2" id="total">
+                                    0
+                                </p>
+                            </div> <!-- FIM DIV.BOX -->
+                        </div> <!-- FIM DIV.COL-MD-3.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
+                    </form>
                 </div> <!-- FIM DIV .ROW -->
 
             </div> <!-- FIM DIV .CONTAINER-FLUID -->
         </section>
-    </form>
+
 </main>
 
 <footer>
