@@ -50,209 +50,210 @@
 
 
 <main>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <label class="control-label" for="">Código do Cliente</label>
-                    <div class="input-group form-group-lg">
-                        <input type="text" class="form-control"  aria-describedby="basic-addon2" id="code">
-                                <span class="input-group-addon" id="basic-addon2">
-                                    <i class="glyphicon glyphicon-barcode"></i>
-                                </span>
-                    </div>
-                </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
-
-            </div> <!-- FIM DIV .ROW -->
-
-            <div class="spacer-default"></div><!-- fim div spacer-default -->
-
-            <div class="row">
-                <div class="col-md-9 col-sm-8 col-xs-12">
-                    <p class="lead text-capitalize text-left" id="name">
-
-                    </p>
-
-                    <p class="lead text-capitalize text-left" id="cpf">
-
-                    </p>
-                </div> <!-- FIM DIV.COL-MD-10.COL-SM-8 -->
-
-
-                <!-- Usar esse block quando o cliente estiver com saldo suficiente -->
-                <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full" id="block">
-                    <div class="box">
-                        <p class="lead text-capitalize font-size-1">
-                            <strong>R$:</strong>
-                        </p>
-                        <p class="lead text-capitalize font-size-2" id="balance">
-
-                        </p>
-                    </div> <!-- FIM DIV.BOX -->
-                </div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
-
-
-
-
-                {{--<!-- Usar esse block quando o cliente estiver com saldo acabando -->--}}
-                {{--<div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-warning border-box-warning bg-box-warning">--}}
-                    {{--<div class="box">--}}
-                        {{--<p class="lead text-capitalize font-size-1">--}}
-                            {{--<strong>R$:</strong>--}}
-                        {{--</p>--}}
-                        {{--<p class="lead text-capitalize font-size-2">--}}
-                            {{--<strong>10,00</strong>--}}
-                        {{--</p>--}}
-                    {{--</div> <!-- FIM DIV.BOX -->--}}
-                {{--</div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-warning.border-box-warning.bg-box-warning -->--}}
-
-
-
-
-                {{--<!-- Usar esse block quando o cliente NAO estiver com saldo suficiente -->--}}
-                {{--<div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-danger border-box-danger bg-box-danger">--}}
-                    {{--<div class="box">--}}
-                        {{--<p class="lead text-capitalize font-size-1">--}}
-                            {{--<strong>R$:</strong>--}}
-                        {{--</p>--}}
-                        {{--<p class="lead text-capitalize font-size-2">--}}
-                            {{--<strong>0,00</strong>--}}
-                        {{--</p>--}}
-                    {{--</div> <!-- FIM DIV.BOX -->--}}
-                {{--</div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-danger.border-box-danger.bg-box-danger -->--}}
-
-
-
-            </div> <!-- FIM DIV .ROW -->
-
-            <div class="spacer-color-1"></div><!-- fim div spacer-default -->
-        </div> <!-- FIM DIV .CONTAINER-FLUID -->
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <form id="sell">
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <label class="control-label" for="formGroupInputLarge">Código do Produto</label>
+    <form action="" method="get" id="sell">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <label class="control-label" for="">Código do Cliente</label>
                         <div class="input-group form-group-lg">
-                            <input type="text" class="form-control"  aria-describedby="basic-addon2" id="productCode">
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2" id="code">
                                     <span class="input-group-addon" id="basic-addon2">
                                         <i class="glyphicon glyphicon-barcode"></i>
                                     </span>
                         </div>
-                    </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+                    </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
 
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-                        <label class="control-label" for="formGroupInputLarge">Nome do Produto</label>
-                        <div class="input-group form-group-lg">
-                            <input type="text" class="form-control" aria-describedby="basic-addon2" id="nameProduct">
+                </div> <!-- FIM DIV .ROW -->
+
+                <div class="spacer-default"></div><!-- fim div spacer-default -->
+
+                <div class="row">
+                    <div class="col-md-9 col-sm-8 col-xs-12">
+                        <p class="lead text-capitalize text-left" id="name">
+
+                        </p>
+
+                        <p class="lead text-capitalize text-left" id="cpf">
+
+                        </p>
+                    </div> <!-- FIM DIV.COL-MD-10.COL-SM-8 -->
+
+
+                    <!-- Usar esse block quando o cliente estiver com saldo suficiente -->
+                    <div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-full border-box-full bg-box-full" id="block">
+                        <div class="box">
+                            <p class="lead text-capitalize font-size-1">
+                                <strong>R$:</strong>
+                            </p>
+                            <p class="lead text-capitalize font-size-2" id="balance">
+
+                            </p>
+                        </div> <!-- FIM DIV.BOX -->
+                    </div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
+
+
+
+
+                    {{--<!-- Usar esse block quando o cliente estiver com saldo acabando -->--}}
+                    {{--<div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-warning border-box-warning bg-box-warning">--}}
+                        {{--<div class="box">--}}
+                            {{--<p class="lead text-capitalize font-size-1">--}}
+                                {{--<strong>R$:</strong>--}}
+                            {{--</p>--}}
+                            {{--<p class="lead text-capitalize font-size-2">--}}
+                                {{--<strong>10,00</strong>--}}
+                            {{--</p>--}}
+                        {{--</div> <!-- FIM DIV.BOX -->--}}
+                    {{--</div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-warning.border-box-warning.bg-box-warning -->--}}
+
+
+
+
+                    {{--<!-- Usar esse block quando o cliente NAO estiver com saldo suficiente -->--}}
+                    {{--<div class="col-md-3 col-sm-4 col-xs-12 text-center box-money-danger border-box-danger bg-box-danger">--}}
+                        {{--<div class="box">--}}
+                            {{--<p class="lead text-capitalize font-size-1">--}}
+                                {{--<strong>R$:</strong>--}}
+                            {{--</p>--}}
+                            {{--<p class="lead text-capitalize font-size-2">--}}
+                                {{--<strong>0,00</strong>--}}
+                            {{--</p>--}}
+                        {{--</div> <!-- FIM DIV.BOX -->--}}
+                    {{--</div> <!-- FIM DIV.COL-MD-2.COL-SM-4.text-center.box-money-danger.border-box-danger.bg-box-danger -->--}}
+
+
+
+                </div> <!-- FIM DIV .ROW -->
+
+                <div class="spacer-color-1"></div><!-- fim div spacer-default -->
+            </div> <!-- FIM DIV .CONTAINER-FLUID -->
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <input id="productId" hidden>
+                            <label class="control-label" for="formGroupInputLarge">Código do Produto</label>
+                            <div class="input-group form-group-lg">
+                                <input type="text" class="form-control"  aria-describedby="basic-addon2" id="productCode">
+                                        <span class="input-group-addon" id="basic-addon2">
+                                            <i class="glyphicon glyphicon-barcode"></i>
+                                        </span>
+                            </div>
+                        </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <label class="control-label" for="formGroupInputLarge">Nome do Produto</label>
+                            <div class="input-group form-group-lg">
+                                <input type="text" class="form-control" aria-describedby="basic-addon2" id="productName">
+                            </div>
+                        </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+
+                        <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg">
+                            <label class="control-label" for="formGroupInputLarge">QTD.</label>
+                            <input type="number" class="form-control" id="qtde">
                         </div>
-                    </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
-                    <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg">
-                        <label class="control-label" for="formGroupInputLarge">QTD.</label>
-                        <input type="number" class="form-control" id="qtde">
-                    </div>
+                        <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
+                            <button type="button" class="btn btn-labeled btn-success btn-lg">
+                                        <span class="btn-label">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                        </span>
+                                Adicionar
+                            </button>
+                        </div>
+                </div> <!-- FIM DIV .ROW -->
 
-                    <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
-                        <button type="button" class="btn btn-labeled btn-success btn-lg">
-                                    <span class="btn-label">
-                                        <i class="glyphicon glyphicon-ok"></i>
-                                    </span>
-                            Adicionar
-                        </button>
-                    </div>
-                </form>
-            </div> <!-- FIM DIV .ROW -->
+                <div class="spacer-default"></div><!-- fim div spacer-default -->
 
-            <div class="spacer-default"></div><!-- fim div spacer-default -->
+                <div class="border-table-compra ">
+                    <div class="table-responsive ajust-table-produtos bg-table-produtos">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr class="active">
+                                <th>Produto</th>
+                                <th>Valor</th>
+                                <th>QTD.</th>
+                                <th>Total</th>
+                                <th>Ação</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
 
-            <div class="border-table-compra ">
-                <div class="table-responsive ajust-table-produtos bg-table-produtos">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                        <tr class="active">
-                            <th>Produto</th>
-                            <th>Valor</th>
-                            <th>QTD.</th>
-                            <th>Total</th>
-                            <th>Ação</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
+                                <td>skoll lata</td>
+                                <td>10,00</td>
+                                <td>2</td>
+                                <td>20,00</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
+                                        <span class="btn-label">
+                                            <i class="glyphicon glyphicon-remove"></i>
+                                        </span>
+                                    </button>
 
-                            <td>skoll lata</td>
-                            <td>10,00</td>
-                            <td>2</td>
-                            <td>20,00</td>
-                            <td class="text-center">
-                                <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
-                                    <span class="btn-label">
-                                        <i class="glyphicon glyphicon-remove"></i>
-                                    </span>
-                                </button>
+                                </td>
+                            </tr>
+                            <tr>
 
-                            </td>
-                        </tr>
-                        <tr>
+                                <td>skoll lata</td>
+                                <td>10,00</td>
+                                <td>2</td>
+                                <td>20,00</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
+                                        <span class="btn-label">
+                                            <i class="glyphicon glyphicon-remove"></i>
+                                        </span>
+                                    </button>
 
-                            <td>skoll lata</td>
-                            <td>10,00</td>
-                            <td>2</td>
-                            <td>20,00</td>
-                            <td class="text-center">
-                                <button type="button" class="btn btn-labeled btn-danger" style="width: 40px;">
-                                    <span class="btn-label">
-                                        <i class="glyphicon glyphicon-remove"></i>
-                                    </span>
-                                </button>
-
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
 
 
 
-                        </tbody>
-                    </table>
-                </div> <!-- FIM DIV .table-responsive.ajust-table-produtos -->
-            </div> <!-- fim div border-table-compra -->
-        </div> <!-- FIM DIV .CONTAINER-FLUID -->
-    </section>
+                            </tbody>
+                        </table>
+                    </div> <!-- FIM DIV .table-responsive.ajust-table-produtos -->
+                </div> <!-- fim div border-table-compra -->
+            </div> <!-- FIM DIV .CONTAINER-FLUID -->
+        </section>
 
-    <div class="spacer-default"></div><!-- fim div spacer-default -->
+        <div class="spacer-default"></div><!-- fim div spacer-default -->
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="form-group-lg">
-                        <button type="button" class="btn btn-labeled btn-success btn-lg">
-                                    <span class="btn-label">
-                                        <i class="fa fa-cart-arrow-down fa-lg" aria-hidden="true"></i>
-                                    </span>
-                            Fechar Compra
-                        </button>
-                    </div>
-                    <div class="spacer-default"></div><!-- fim div spacer-default -->
-                </div> <!-- FIM DIV.COL-MD-9.COL-SM-8 -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group-lg">
+                            <button type="submit" class="btn btn-labeled btn-success btn-lg">
+                                        <span class="btn-label">
+                                            <i class="fa fa-cart-arrow-down fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                Fechar Compra
+                            </button>
+                        </div>
+                        <div class="spacer-default"></div><!-- fim div spacer-default -->
+                    </div> <!-- FIM DIV.COL-MD-9.COL-SM-8 -->
 
 
-                <div class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-12 text-center box-finalizar-venda border-finalizar-venda bg-finalizar-venda ">
-                    <div class="box">
-                        <p class="lead text-capitalize font-size-1">
-                            <strong>R$:</strong>
-                        </p>
-                        <p class="lead text-capitalize font-size-2">
-                            <strong>70,00</strong>
-                        </p>
-                    </div> <!-- FIM DIV.BOX -->
-                </div> <!-- FIM DIV.COL-MD-3.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
-            </div> <!-- FIM DIV .ROW -->
+                    <div class="col-md-3 col-md-offset-3 col-sm-3 col-sm-offset-3 col-xs-12 text-center box-finalizar-venda border-finalizar-venda bg-finalizar-venda ">
+                        <div class="box">
+                            <p class="lead text-capitalize font-size-1">
+                                <strong>Total:</strong>
+                            </p>
+                            <p class="lead text-capitalize font-size-2" id="total">
 
-        </div> <!-- FIM DIV .CONTAINER-FLUID -->
-    </section>
+                            </p>
+                        </div> <!-- FIM DIV.BOX -->
+                    </div> <!-- FIM DIV.COL-MD-3.COL-SM-4.text-center.box-money-full.border-box-full.bg-box-full -->
+                </div> <!-- FIM DIV .ROW -->
+
+            </div> <!-- FIM DIV .CONTAINER-FLUID -->
+        </section>
+    </form>
 </main>
 
 <footer>

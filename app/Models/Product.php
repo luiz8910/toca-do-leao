@@ -11,7 +11,7 @@ class Product extends Model implements Transformable
     use TransformableTrait;
 
     protected $fillable = [
-        'name', 'code', 'value', 'qtde'
+        'product_id', 'name', 'code', 'value', 'qtde'
     ];
 
     public function customers()

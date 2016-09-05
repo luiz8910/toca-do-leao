@@ -4,6 +4,46 @@
 
 
 $(function (){
+    $('#productCode').change(function () {
+        var code = $('#productCode').val();
+
+
+        var request = $.ajax({
+            method: 'post',
+            url: 'product/show/' + code,
+            data: code,
+            dataType: 'json'
+        });
+
+        request.done(function (e) {
+            console.log('done');
+
+            if(e.code == code)
+            {
+                $('#productId').val(e.id);
+                $('#productName').val(e.name);
+                //$('#total').html('<strong>'+ e.currentBalance+'</strong>');
+            }
+            else if(e.planB == code){
+                $('#id').val(e.id);
+                $('#name').html('<strong>Nome: </strong>' + e.name);
+                $('#cpf').html('<strong>CPF: </strong>' + e.cpf);
+                $('#balance').html('<strong>'+ e.currentBalance+'</strong>');
+                $('#block').show();
+            }
+            else{
+                $('#myModalLabel').html('Atenção');
+                $('#modalText').html('O código '+ code + 'não está cadastrado na base de dados');
+            }
+        });
+
+        request.fail(function (e) {
+            console.log('fail');
+            console.log(e);
+        });
+
+        return false;
+    });
 
     $('#addCredit').submit(function () {
         var money = $('#money').val();

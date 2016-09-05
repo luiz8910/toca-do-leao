@@ -4,6 +4,7 @@ namespace TocaLeao\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
 use TocaLeao\Http\Requests;
 use TocaLeao\Http\Controllers\Controller;
 
@@ -16,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('demo.customer');
     }
 
     /**
@@ -46,9 +47,20 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        //
+        $result = DB::table('products')
+            ->where('code', $code)
+            ->first();
+
+        if($result == null)
+        {
+            $result = DB::table('products')
+                ->where('planB', $code)
+                ->first();
+        }
+
+        echo json_encode($result);
     }
 
     /**

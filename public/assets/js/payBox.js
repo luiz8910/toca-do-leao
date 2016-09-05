@@ -47,6 +47,18 @@ $(function (){
         return false;
     });
 
+    $('#money').change(function () {
+       var money = $('#money').val();
+
+        if(money > 0)
+        {
+            $('#btnAddCredit').attr('disabled', false);
+        }
+        else if(money < 1 || !money){
+            $('#btnAddCredit').attr('disabled', true);
+        }
+    });
+
     $('#addCredit').submit(function () {
         var money = $('#money').val();
         var id = $('#id').val();

@@ -28,7 +28,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('demo.customer');
+
     }
 
     /**
@@ -38,18 +38,14 @@ class CustomerController extends Controller
      */
     public function payBox()
     {
-        $customer = $this->repository->all();
-
-        return view('demo.payBox', compact('customer'));
+        return view('demo.payBox');
     }
 
     public function addCredit($id, $money)
     {
-        $balance = $this->repository->find($id)->currentBalance;
+        $money += $this->repository->find($id)->currentBalance;
 
-        $money += $balance;
-
-        $update = DB::table('customers')
+        DB::table('customers')
             ->where('id', $id)
             ->update(['currentBalance' => $money]);
 

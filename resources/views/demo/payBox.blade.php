@@ -117,7 +117,7 @@
                     </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
                     <div class="col-xs-2 col-sm-2 form-group-lg bt-ok-compra">
-                        <button type="submit" class="btn btn-labeled btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                        <button type="submit" id="btnAddCredit" class="btn btn-labeled btn-success btn-lg" disabled="disabled" data-toggle="modal" data-target="#myModal">
                                     <span class="btn-label">
                                         <i class="glyphicon glyphicon-ok"></i>
                                     </span>
