@@ -56,6 +56,7 @@
                 <div class="col-md-12 col-sm-12">
                     <label class="control-label" for="formGroupInputLarge">Código do Cliente</label>
                     <div class="input-group form-group-lg">
+                        <div id="interactive" class="viewport"></div>
                         <input type="text" class="form-control" id="code"  aria-describedby="basic-addon2">
                                 <span class="input-group-addon" id="basic-addon2">
                                     <i class="glyphicon glyphicon-barcode"></i>
@@ -165,6 +166,7 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jasny-bootstrap.js"></script>
 <script src="assets/js/payBox.js"></script>
+<script src="quagga/dist/quagga.min.js"></script>
 
 
 </body>

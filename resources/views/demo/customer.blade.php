@@ -132,7 +132,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                        <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
                             <input id="id" hidden>
                             <input id="productId" hidden>
                             <input id="productValue" hidden>
@@ -145,27 +145,34 @@
                             </div>
                         </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
-                        <div class="col-md-8 col-sm-12 col-xs-12">
-                            <label class="control-label" for="formGroupInputLarge">Nome do Produto</label>
-                            <div class="input-group form-group-lg">
-                                <input type="text" class="form-control" aria-describedby="basic-addon2" id="productName">
-                            </div>
-                        </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
                         <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg">
                             <label class="control-label" for="formGroupInputLarge">QTD.</label>
                             <input type="number" class="form-control" id="qtde">
                         </div>
 
-                        <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
-                            <button type="button" class="btn btn-labeled btn-success btn-lg" id="addProduct">
+                </div> <!-- FIM DIV .ROW -->
+                <br>
+
+                <div class="row">
+                    <div class="col-md-10 col-sm-12 col-xs-12 form-group-lg">
+                        <label class="control-label" for="formGroupInputLarge">Nome de Produto:</label>
+                        <input type="number" class="form-control" id="productName">
+                    </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
+
+
+
+                    <div class="col-md-2 col-sm-6 col-xs-6 form-group-lg bt-ok-compra">
+                        <button type="button" class="btn btn-labeled btn-success btn-lg" id="addProduct">
                                         <span class="btn-label">
                                             <i class="glyphicon glyphicon-ok"></i>
                                         </span>
-                                Adicionar
-                            </button>
-                        </div>
+                            Adicionar
+                        </button>
+                    </div>
                 </div> <!-- FIM DIV .ROW -->
+
+
 
                 <div class="spacer-default"></div><!-- fim div spacer-default -->
 
