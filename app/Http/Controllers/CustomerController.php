@@ -43,7 +43,7 @@ class CustomerController extends Controller
 
     public function addCredit($id, $money)
     {
-        $money += $this->repository->find($id)->currentBalance;
+        $money += (float) $this->repository->find($id)->currentBalance;
 
         DB::table('customers')
             ->where('id', $id)

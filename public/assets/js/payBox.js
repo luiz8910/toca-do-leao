@@ -4,39 +4,39 @@
 
 
 $(function (){
-    $('#code').click(function () {
-        Quagga.init({
-            inputStream: {
-                name: "Live",
-                type: "LiveStream",
-                constraints: {
-                    width: 640,
-                    height: 480,
-                    facing: "environment"
-                }
-            },
-            locator: {
-                patchSize: "medium",
-                halfSample: true
-            },
-            numOfWorkers: 4,
-            locate: true,
-            decoder : {
-                readers: ["code_128_reader", "ean_reader"]
-            }
-        }, function() {
-            Quagga.start();
-        });
+    //$('#code').click(function () {
+    //    Quagga.init({
+    //        inputStream: {
+    //            name: "Live",
+    //            type: "LiveStream",
+    //            constraints: {
+    //                width: 640,
+    //                height: 480,
+    //                facing: "environment"
+    //            }
+    //        },
+    //        locator: {
+    //            patchSize: "medium",
+    //            halfSample: true
+    //        },
+    //        numOfWorkers: 4,
+    //        locate: true,
+    //        decoder : {
+    //            readers: ["code_128_reader", "ean_reader"]
+    //        }
+    //    }, function() {
+    //        Quagga.start();
+    //    });
+    //
+    //    Quagga.onDetected(function(result) {
+    //        var code = result.codeResult.code;
+    //        alert('codigo = ' + code);
+    //        $('#code').val(code);
+    //        Quagga.stop();
+    //    });
+    //});
 
-        Quagga.onDetected(function(result) {
-            var code = result.codeResult.code;
-            alert('codigo = ' + code);
-            $('#code').val(code);
-            Quagga.stop();
-        });
-    });
-
-    $('#code').change(function () {
+    $('#btn_code').submit(function () {
         var code = $('#code').val();
 
 
@@ -49,8 +49,16 @@ $(function (){
 
         request.done(function (e) {
             console.log('done');
+            console.log(e);
 
-             if(e.barCode == code)
+            if(e == null)
+            {
+                $('#myModalLabel').html('Atenção');
+                $('#modalText').html('O código '+ code + ' não está cadastrado na base de dados');
+                $('#myModal').modal('show');
+            }
+
+             else
              {
                  $('#id').val(e.id);
                  $('#name').html('<strong>Nome: </strong>' + e.name);
@@ -58,17 +66,14 @@ $(function (){
                  $('#balance').html('<strong>'+ e.currentBalance+'</strong>');
                  $('#block').show();
              }
-            else if(e.planB == code){
-                 $('#id').val(e.id);
-                 $('#name').html('<strong>Nome: </strong>' + e.name);
-                 $('#cpf').html('<strong>CPF: </strong>' + e.cpf);
-                 $('#balance').html('<strong>'+ e.currentBalance+'</strong>');
-                 $('#block').show();
-            }
-            else{
-                 $('#myModalLabel').html('Atenção');
-                 $('#modalText').html('O código '+ code + 'não está cadastrado na base de dados');
-             }
+            //else if(e.planB == code){
+            //     $('#id').val(e.id);
+            //     $('#name').html('<strong>Nome: </strong>' + e.name);
+            //     $('#cpf').html('<strong>CPF: </strong>' + e.cpf);
+            //     $('#balance').html('<strong>'+ e.currentBalance+'</strong>');
+            //     $('#block').show();
+            //}
+
         });
 
         request.fail(function (e) {
@@ -95,6 +100,7 @@ $(function (){
         var money = $('#money').val();
         var id = $('#id').val();
 
+
         if(id)
         {
             var request = $.ajax({
@@ -109,11 +115,13 @@ $(function (){
                 {
                     $('#myModalLabel').html('Sucesso');
                     $('#modalText').html('A quantia de ' + $('#money').val() + ' foi adicionada com sucesso');
+                    $('#myModal').modal('show');
                     $('#balance').html('<strong>'+ e+'</strong>');
                 }
                 else{
                     $('#myModalLabel').html('Atenção');
                     $('#modalText').html('O crédito não pode ser realizado');
+                    $('#myModal').modal('show');
                 }
             });
 
@@ -121,9 +129,12 @@ $(function (){
                 console.log('fail');
                 console.log(e);
             });
+
+
         }
         else {
             $('#modalText').html('Selecione um cliente antes de adicionar crédito');
+            $('#myModal').modal('show');
         }
 
         return false;

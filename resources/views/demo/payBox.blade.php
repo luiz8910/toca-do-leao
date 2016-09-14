@@ -53,17 +53,17 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <label class="control-label" for="formGroupInputLarge">Código do Cliente</label>
-                    <div class="input-group form-group-lg">
-                        <div id="interactive" class="viewport"></div>
-                        <input type="text" class="form-control" id="code"  aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2">
-                                    <i class="glyphicon glyphicon-barcode"></i>
-                                </span>
-                    </div>
-                </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
-
+                <form id="btn_code">
+                    <div class="col-md-12 col-sm-12">
+                        <label class="control-label" for="formGroupInputLarge">Código do Cliente</label>
+                                <div class="input-group form-group-lg">
+                                    <input type="text" id="code" class="form-control input-lg" placeholder="Entre com o código de barras ou código do cliente">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default btn-lg" type="submit">Ok</button>
+                                    </span>
+                                </div><!-- /input-group -->
+                    </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
+                </form>
             </div> <!-- FIM DIV .ROW -->
 
             <div class="spacer-default"></div><!-- fim div spacer-default -->
@@ -110,7 +110,7 @@
                                 <label class="control-label">Adicionar Crédito</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">R$</span>
-                                    <input type="number" class="form-control" id="money" aria-describedby="inputGroupSuccess1Status">
+                                    <input type="text" class="form-control" id="money" aria-describedby="inputGroupSuccess1Status">
                                 </div>
 
 
@@ -118,7 +118,7 @@
                     </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
                     <div class="col-xs-2 col-sm-2 form-group-lg bt-ok-compra">
-                        <button type="submit" id="btnAddCredit" class="btn btn-labeled btn-success btn-lg" disabled="disabled" data-toggle="modal" data-target="#myModal">
+                        <button type="submit" id="btnAddCredit" class="btn btn-labeled btn-success btn-lg" disabled="disabled">
                                     <span class="btn-label">
                                         <i class="glyphicon glyphicon-ok"></i>
                                     </span>

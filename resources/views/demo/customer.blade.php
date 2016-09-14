@@ -53,15 +53,19 @@
     <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <label class="control-label" for="">Código do Cliente</label>
-                        <div class="input-group form-group-lg">
-                            <input type="text" class="form-control"  aria-describedby="basic-addon2" id="code">
-                                    <span class="input-group-addon" id="basic-addon2">
-                                        <i class="glyphicon glyphicon-barcode"></i>
+                    <form id="btn_code">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <input hidden id="id">
+                            <label class="control-label" for="">Código do Cliente</label>
+                            <div class="input-group form-group-lg">
+                                <input type="text" id="code" class="form-control input-lg" placeholder="Entre com o código de barras ou código do cliente">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default btn-lg" type="submit">Ok</button>
                                     </span>
-                        </div>
-                    </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
+                            </div>
+                        </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
+                    </form>
+
 
                 </div> <!-- FIM DIV .ROW -->
 
@@ -131,18 +135,12 @@
 
         <section>
             <div class="container">
-                <div class="row">
-                        <div class="col-md-10 col-sm-12 col-xs-12">
-                            <input id="id" hidden>
-                            <input id="productId" hidden>
-                            <input id="productValue" hidden>
-                            <label class="control-label" for="formGroupInputLarge">Código do Produto</label>
-                            <div class="input-group form-group-lg">
-                                <input type="text" class="form-control"  aria-describedby="basic-addon2" id="productCode">
-                                        <span class="input-group-addon" id="basic-addon2">
-                                            <i class="glyphicon glyphicon-barcode"></i>
-                                        </span>
-                            </div>
+                <input id="productId" hidden>
+                <input id="productValue" hidden>
+                    <div class="row">
+                        <div class="col-md-10 col-sm-12 col-xs-12 form-group-lg">
+                            <label class="control-label" for="formGroupInputLarge">Código do Produto:</label>
+                            <input type="number" class="form-control" id="productCode">
                         </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
 
@@ -157,7 +155,7 @@
                 <div class="row">
                     <div class="col-md-10 col-sm-12 col-xs-12 form-group-lg">
                         <label class="control-label" for="formGroupInputLarge">Nome de Produto:</label>
-                        <input type="number" class="form-control" id="productName">
+                        <input type="text" class="form-control" id="productName">
                     </div> <!-- FIM DIV.COL-MD-6.COL-SM-12 -->
 
 
@@ -204,11 +202,28 @@
                                 <h4 class="modal-title" id="myModalLabel">Atenção</h4>
                             </div>
                             <div class="modal-body" id="modalText">
-                                Deseja Excluir o item selecionado?
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <button type="button" id="removeItem" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+                                <button type="button" id="removeItem" class="btn btn-primary" data-dismiss="modal">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Modal -->
+
+                <div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="sellModalLabel">Atenção</h4>
+                            </div>
+                            <div class="modal-body" id="sellModalText">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
                             </div>
                         </div>
                     </div>
@@ -271,6 +286,17 @@
 <script src="assets/js/jasny-bootstrap.js"></script>
 <script src="assets/js/payBox.js"></script>
 <script src="assets/js/sales.js"></script>
+
+<script>
+    function excluir(id)
+    {
+        alert(id + ' produto');
+        productId = id;
+        console.log(productId + ' productID');
+        $('#modalText').html('Deseja excluir o produto selecionado');
+        $('#myModal').modal('show');
+    }
+</script>
 
 
 </body>

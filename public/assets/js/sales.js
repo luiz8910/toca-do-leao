@@ -4,9 +4,13 @@
 
 
 $(function (){
-    $('#productCode').change(function () {
-        var code = $('#productCode').val();
 
+
+
+    $('#productCode').change(function () {
+        productId = $('#productId').val();
+        var code = $('#productCode').val();
+        alert(productId);
 
         var request = $.ajax({
             method: 'post',
@@ -25,14 +29,14 @@ $(function (){
                 $('#productValue').val(e.value);
                 //$('#total').html('<strong>'+ e.currentBalance+'</strong>');
             }
-            else if(e.planB == code){
-                $('#productId').val(e.id);
-                $('#productName').val(e.name);
-                $('#productValue').val(e.value);
-            }
+            //else if(e.planB == code){
+            //    $('#productId').val(e.id);
+            //    $('#productName').val(e.name);
+            //    $('#productValue').val(e.value);
+            //}
             else{
                 $('#myModalLabel').html('Atenção');
-                $('#modalText').html('O código '+ code + 'não está cadastrado na base de dados');
+                $('#modalText').html('O código '+ code + ' não está cadastrado na base de dados');
             }
         });
 
@@ -41,22 +45,24 @@ $(function (){
             console.log(e);
         });
 
-        return false;
+
     });
 
 
     $('#addProduct').click(function(){
-        productId = $('#productId').val();
+
         var qtde = $('#qtde').val() ?  $('#qtde').val() : 1.00;
         var total = parseFloat($('#productValue').val()) * parseFloat(qtde);
+
+        productId = document.getElementById('productId').value;
 
        var table = '<tr id='+'tr'+productId+'>';
             table += '<td>'+$('#productName').val()+'</td>';
             table += '<td>'+$('#productValue').val()+'</td>';
             table += '<td>'+qtde+'</td>';
-            table += '<td id='+'value'+productId+'>'+total+'</td>';
+            table += '<td id='+'value'+productId+'>'+total.toFixed(2)+'</td>';
             table += '<td class="text-center">';
-            table += '<button type="button" class="btn btn-labeled btn-danger" id='+productId+' style="width: 40px;" data-toggle="modal" data-target="#myModal">';
+            table += '<button type="button" class="btn btn-labeled btn-danger"  onclick="excluir('+productId+')" id='+productId+' style="width: 38px !important;" >';
             table += '<span class="btn-label">';
             table += '<i class="glyphicon glyphicon-remove"></i>';
             table += '</span></button></td></tr>';
@@ -73,7 +79,6 @@ $(function (){
     });
 
     $('#removeItem').click(function(){
-
         var itemValue = parseFloat($('#value'+productId).text());
 
         var value = parseFloat($('#total').text());
@@ -81,43 +86,57 @@ $(function (){
         $('#total').html(parseFloat(value));
 
         $('#tr'+productId).remove();
-
-        return false;
     });
+
+
 
     $('#sell').submit(function () {
         var id = $('#id').val();
         var total = $('#total').text();
+        var balance = $('#balance').text();
+
+
 
         if(id)
         {
             if(total > 0)
             {
-                var request = $.ajax({
-                    method:'POST',
-                    url:'customer/sell/'+id+'-'+total,
-                    data: total,
-                    dataType:'json'
-                });
+                if(parseFloat(total) > parseFloat(balance))
+                {
+                    $('#sellModalText').html('O valor da compra é maior que o saldo disponível');
+                    $('#sellModal').modal('show');
+                }
+                else
+                {
+                    var request = $.ajax({
+                        method:'POST',
+                        url:'customer/sell/'+id+'-'+total,
+                        data: total,
+                        dataType:'json'
+                    });
 
-                request.done(function (e) {
-                    console.log('done');
+                    request.done(function (e) {
+                        console.log('done');
 
-                    window.location = '/';
-                });
+                        window.location = '/';
+                    });
 
-                request.fail(function(e){
-                    console.log('fail');
-                    console.log(e);
-                });
+                    request.fail(function(e){
+                        console.log('fail');
+                        console.log(e);
+                    });
+                }
+
             }
             else{
-                alert('Selecione pelo menos um produto');
+                $('#sellModalText').html('Selecione pelo menos um produto');
+                $('#sellModal').modal('show');
             }
 
         }
         else{
-            alert('Não há clientes selecionados');
+            $('#sellModalText').html('Não há clientes selecionados');
+            $('#sellModal').modal('show');
         }
 
         return false;

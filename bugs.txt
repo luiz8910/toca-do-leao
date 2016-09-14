@@ -1,0 +1,6 @@
+confirmar botão ok com tecla enter em código do cliente; -- ok
+centavos em campos monetários; -- ok
+bug botão de exclusão; -- ok
+atualizar a pagina quando alterar o cliente;
+deixar campo qtde na table disabled, e enabled quando clicar;
+somar qtde aos produtos que ja foram adicionados;

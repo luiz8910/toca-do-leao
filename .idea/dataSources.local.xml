@@ -5,5 +5,11 @@
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
     </data-source>
+    <data-source name="MySQL - emakerco_tocaLeao@emaker.com.br" uuid="8866f406-ee0b-40ed-b205-3a471aa87b4d">
+      <secret-storage>master_key</secret-storage>
+      <user-name>emakerco_root</user-name>
+      <schema-pattern>emakerco_tocaLeao.*</schema-pattern>
+      <default-schemas>emakerco_tocaLeao.*</default-schemas>
+    </data-source>
   </component>
 </project>

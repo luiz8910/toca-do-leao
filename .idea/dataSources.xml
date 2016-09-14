@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="553988809">
+  <component name="DataSourceManagerImpl" format="xml" hash="397636877">
     <data-source source="LOCAL" name="MySQL - tocaLeao@localhost" uuid="8eb45a2d-c359-4885-a515-4d1cac2ab211">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -8,6 +8,19 @@
       <jdbc-url>jdbc:mysql://localhost:3306/tocaLeao</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - emakerco_tocaLeao@emaker.com.br" uuid="8866f406-ee0b-40ed-b205-3a471aa87b4d">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://emaker.com.br:3306/emakerco_tocaLeao</jdbc-url>
+      <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
         <property name="characterEncoding" value="utf8" />
