@@ -66,6 +66,14 @@
                         </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
                     </form>
 
+                    <div class="col-xs-2 col-sm-2 form-group-lg bt-ok-compra">
+                        <button type="button" id="redirectPayBox" class="btn btn-labeled btn-success btn-lg">
+                            <span class="btn-label">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                            Ir para Caixa
+                        </button>
+                    </div>
 
                 </div> <!-- FIM DIV .ROW -->
 
@@ -290,9 +298,7 @@
 <script>
     function excluir(id)
     {
-        alert(id + ' produto');
         productId = id;
-        console.log(productId + ' productID');
         $('#modalText').html('Deseja excluir o produto selecionado');
         $('#myModal').modal('show');
     }

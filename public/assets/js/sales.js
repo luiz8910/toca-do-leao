@@ -5,12 +5,14 @@
 
 $(function (){
 
+    $('#redirectPayBox').click(function () {
+        window.location = '/';
+    });
 
 
     $('#productCode').change(function () {
         productId = $('#productId').val();
         var code = $('#productCode').val();
-        alert(productId);
 
         var request = $.ajax({
             method: 'post',
@@ -118,7 +120,7 @@ $(function (){
                     request.done(function (e) {
                         console.log('done');
 
-                        window.location = '/';
+                        window.location = '/cliente';
                     });
 
                     request.fail(function(e){

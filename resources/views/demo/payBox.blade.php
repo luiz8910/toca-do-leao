@@ -64,6 +64,20 @@
                                 </div><!-- /input-group -->
                     </div> <!-- FIM DIV.COL-MD-12.COL-SM-12 -->
                 </form>
+
+
+                <div class="col-xs-2 col-sm-2 form-group-lg bt-ok-compra">
+                    <button type="button" id="redirectCustomer" class="btn btn-labeled btn-success btn-lg">
+                    <span class="btn-label">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </span>
+                        Ir para Clientes
+                    </button>
+                </div>
+
+
+
+
             </div> <!-- FIM DIV .ROW -->
 
             <div class="spacer-default"></div><!-- fim div spacer-default -->

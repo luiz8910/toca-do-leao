@@ -35,6 +35,9 @@ $(function (){
     //        Quagga.stop();
     //    });
     //});
+    $('#redirectCustomer').click(function () {
+        window.location = '/cliente';
+    });
 
     $('#btn_code').submit(function () {
         var code = $('#code').val();
@@ -60,10 +63,12 @@ $(function (){
 
              else
              {
+                 var balance = parseFloat(e.currentBalance);
+
                  $('#id').val(e.id);
                  $('#name').html('<strong>Nome: </strong>' + e.name);
                  $('#cpf').html('<strong>CPF: </strong>' + e.cpf);
-                 $('#balance').html('<strong>'+ e.currentBalance+'</strong>');
+                 $('#balance').html('<strong>'+balance.toFixed(2)+'</strong>');
                  $('#block').show();
              }
             //else if(e.planB == code){
@@ -113,10 +118,12 @@ $(function (){
             request.done(function (e) {
                 if (e)
                 {
+                    var balance = parseFloat(e.toFixed(2));
+
                     $('#myModalLabel').html('Sucesso');
                     $('#modalText').html('A quantia de ' + $('#money').val() + ' foi adicionada com sucesso');
                     $('#myModal').modal('show');
-                    $('#balance').html('<strong>'+ e+'</strong>');
+                    $('#balance').html('<strong>'+ balance.toFixed(2)+'</strong>');
                 }
                 else{
                     $('#myModalLabel').html('Atenção');
